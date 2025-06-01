@@ -1,0 +1,19 @@
+# ===========================================
+# 테스트 환경 설정 (TestContainers 최적화)
+# ===========================================
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  # TestContainers가 datasource 자동 주입
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # 테스트마다 깨끗한 스키마
+    show-sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    io.implermine.desolo: DEBUG
+    org.testcontainers: INFO
