@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude test classes from certain checks -->
+    <Match>
+        <Class name="~.*Test.*"/>
+        <Bug pattern="DM_EXIT"/>
+    </Match>
+
+    <!-- Exclude generated code -->
+    <Match>
+        <Class name="~.*\.Q.*"/>
+    </Match>
+
+    <!-- Exclude Lombok generated code -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP"/>
+        <Class name="~.*"/>
+        <Method name="~get.*"/>
+    </Match>
+
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+        <Class name="~.*"/>
+        <Method name="~set.*"/>
+    </Match>
+
+    <!-- Exclude Spring Boot configuration classes -->
+    <Match>
+        <Class name="~.*Configuration"/>
+        <Bug pattern="UWF_UNWRITTEN_FIELD"/>
+    </Match>
+
+    <!-- Exclude JPA entities from certain checks -->
+    <Match>
+        <Class name="~.*Entity"/>
+        <Bug pattern="SE_BAD_FIELD"/>
+    </Match>
+
+    <!-- Exclude DTOs from serialization warnings -->
+    <Match>
+        <Class name="~.*Dto"/>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+
+    <!-- Exclude Spring Boot main class -->
+    <Match>
+        <Class name="~.*Application"/>
+        <Method name="main"/>
+        <Bug pattern="DM_EXIT"/>
+    </Match>
+
+</FindBugsFilter> 
