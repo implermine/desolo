@@ -1,7 +1,7 @@
 package io.implermine.desolo.web.coupon;
 
 import io.implermine.desolo.domain.coupon.CouponService;
-import io.implermine.desolo.domain.coupon.UseCouponResult;
+import io.implermine.desolo.domain.coupon.model.UseCouponResult;
 import io.implermine.desolo.domain.coupon.issued.Coupon;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +35,7 @@ public class CouponController {
             @PathVariable("userId") final String userId,
             @RequestBody final UseCouponRequest request
     ) {
-        UseCouponResult useCouponResult = couponService.useCoupon(request.toCommand(userId));
+        UseCouponResult useCouponResult = couponService.useBestCoupon(request.toCommand(userId));
         return UseCouponResponse.from(useCouponResult);
     }
 

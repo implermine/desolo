@@ -1,4 +1,4 @@
-package io.implermine.desolo.domain.coupon;
+package io.implermine.desolo.domain.coupon.model;
 
 //segregation of data and behavior
 //data

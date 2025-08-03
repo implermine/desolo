@@ -1,7 +1,7 @@
 package io.implermine.desolo.domain.coupon.definition;
 
 
-import io.implermine.desolo.domain.coupon.CouponType;
+import io.implermine.desolo.domain.coupon.model.CouponType;
 
 //segregate between definition and instance (instance will be Coupon)
 /**

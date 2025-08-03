@@ -1,6 +1,6 @@
 package io.implermine.desolo.domain.coupon.policy;
 
-import io.implermine.desolo.domain.coupon.CouponType;
+import io.implermine.desolo.domain.coupon.model.CouponType;
 import org.springframework.stereotype.Repository;
 
 import java.util.EnumMap;

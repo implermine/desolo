@@ -1,7 +1,7 @@
 package io.implermine.desolo.web.coupon;
 
-import io.implermine.desolo.domain.coupon.CouponType;
-import io.implermine.desolo.domain.coupon.UseCouponResult;
+import io.implermine.desolo.domain.coupon.model.CouponType;
+import io.implermine.desolo.domain.coupon.model.UseCouponResult;
 
 public record UseCouponResponse(
         long originalPrice,

@@ -1,6 +1,6 @@
 package io.implermine.desolo.domain.coupon.issued;
 
-import io.implermine.desolo.domain.coupon.CouponType;
+import io.implermine.desolo.domain.coupon.model.CouponType;
 
 public record Coupon(
         String userId,
