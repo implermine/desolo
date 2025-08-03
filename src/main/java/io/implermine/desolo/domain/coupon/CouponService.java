@@ -58,10 +58,9 @@ public class CouponService {
         Objects.requireNonNull(lock);
         if (lock.tryLock()) {
             try {
-                //1. 락 유효시간이 짧다면 고려
-                //if(existsByUserIdAndCouponType(command.userId(),command.couponType())){
-                //    throw new IllegalStateException("이미 발급받은 쿠폰입니다.");
-                //}
+                if(existsByUserIdAndCouponType(command.userId(),command.couponType())){
+                    throw new IllegalStateException("이미 발급받은 쿠폰입니다.");
+                }
 
                 Coupon coupon = new Coupon(command.userId(), command.couponType());
                 couponRepository.save(coupon);
