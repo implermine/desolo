@@ -1,0 +1,31 @@
+# ===========================================
+# LOCAL 환경 (개발용)
+# ===========================================
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${POSTGRES_DB:desolo_local}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 개발 시 스키마 자동 업데이트
+    show-sql: true
+
+  sql:
+    init:
+      mode: always  # 초기 스크립트 실행
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.example: DEBUG
+    io.implermine.desolo: DEBUG
